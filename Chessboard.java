@@ -1,10 +1,11 @@
 import java.util.ArrayList
 
+
 class ChessBoard() {
 
-    private final static int BOARD_MAX = 8;
     ArrayList<BoardTile> chessBoard = new ArrayList<BoardTile>();
     private String colourPreset[] = ["b" , "w"];
+    private final static int BOARD_MAX = 8;
 
     // Set 8 by 8 chess board. 
     private static void initializeBoard() {
@@ -21,32 +22,21 @@ class ChessBoard() {
 
 class BoardTile() {
 
-    private int xPos;
-    private int ypos;
+    private Coordinate coordinates;
     private String colour;
 
-    public BoardTile(int xPos, int yPos, String colour) {
-        setxPos(xPos);
-        setyPos(yPos);
+    public BoardTile(Coordinate coordinates, String colour) {
+        setCoordinates(coordinates);
         setColour(colour);
     }
 
-    public void setxPos(int xPosToSet) {
-        this.xPos = xPosToSet;
+    public void setCoordinates(Coordinate coordinatesToSet) {
+        this.coordinates = coordinatesToSet;
     }
 
-    public int getxPos() {
-        tempxPos = this.xPos;
-        return tempxPos;
-    }
-
-    public void setyPos(int yPosToSet) {
-        this.yPos = yPosToSet;
-    }
-
-    public int getyPos() {
-        tempyPos = this.yPos;
-        return tempyPos;
+    public Coordinate getCoordinates() {
+        tempCoordinates = this.coordinates;
+        return tempCoordinates;
     }
 
     public void setColour(int colourToSet) {
@@ -56,5 +46,37 @@ class BoardTile() {
     public String getColour() {
         tempColour = this.colour;
         return tempColour;
+    }
+}
+
+class Coordinate() {
+
+    private int xCoord;
+    private int yCoord;
+    private final static int BOARD_MAX = 8;
+
+    public Coordinate(int xCoord, int yCoord) {
+        setXCoord(xCoord);
+        setYCoord(yCoord);
+    }
+
+    public void setXCoord(int xCoordToSet) {
+        assert xCoordToSet < BOARD_MAX: "Error.";
+        this.xCoord = xCoordToSet;
+    }
+
+    public int getxCoord() {
+        tempXPos = this.xPos;
+        return tempXPos;
+    }
+
+    public void setyCoord(int yCoordToSet) {
+    assert yCoordToSet < BOARD_MAX: "Error.";
+        this.yCoord = yCoordToSet;
+    }
+
+    public int getyCoord() {
+        tempYPos = this.yPos;
+        return tempYPos;
     }
 }
