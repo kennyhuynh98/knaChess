@@ -23,9 +23,9 @@ class BoardTile() {
 
     private int xPos;
     private int ypos;
-    private char colour;
+    private String colour;
 
-    public BoardTile(int xPos, int yPos, char colour) {
+    public BoardTile(int xPos, int yPos, String colour) {
         setxPos(xPos);
         setyPos(yPos);
         setColour(colour);
@@ -53,7 +53,7 @@ class BoardTile() {
         this.xPos = xPosToSet;
     }
 
-    public char getColour() {
+    public String getColour() {
         tempColour = this.colour;
         return tempColour;
     }
