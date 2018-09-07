@@ -1,4 +1,4 @@
-class Coordinate() {
+public class Coordinate {
 
     private int xCoord;
     private int yCoord;
@@ -14,18 +14,18 @@ class Coordinate() {
         this.xCoord = xCoordToSet;
     }
 
-    public int getxCoord() {
-        tempXPos = this.xPos;
-        return tempXPos;
+    public int getXCoord() {
+        int tempXCoord = this.xCoord;
+        return tempXCoord;
     }
 
-    public void setyCoord(int yCoordToSet) {
-    assert yCoordToSet < BOARD_MAX: "Error.";
+    public void setYCoord(int yCoordToSet) {
+        assert yCoordToSet < BOARD_MAX: "Error.";
         this.yCoord = yCoordToSet;
     }
 
-    public int getyCoord() {
-        tempYPos = this.yPos;
-        return tempYPos;
+    public int getYCoord() {
+        int tempYCoord = this.yCoord;
+        return tempYCoord;
     }
 }

@@ -1,6 +1,4 @@
-import Coordinate
-
-class BoardTile() {
+public class BoardTile {
 
     private Coordinate coordinates;
     private String colour;
@@ -15,16 +13,16 @@ class BoardTile() {
     }
 
     public Coordinate getCoordinates() {
-        tempCoordinates = this.coordinates;
+        Coordinate tempCoordinates = this.coordinates;
         return tempCoordinates;
     }
 
-    public void setColour(int colourToSet) {
-        this.xPos = xPosToSet;
+    public void setColour(String colourToSet) {
+        this.colour = colourToSet;
     }
 
     public String getColour() {
-        tempColour = this.colour;
+        String tempColour = this.colour;
         return tempColour;
     }
 }

@@ -1,4 +1,5 @@
-import Chessboard
-
-class ChessDriver():
-    Chessboard myChessBoard = new Chessboard();
+public class ChessDriver {
+    public static void main(String[] args) {
+        ChessBoard myChessBoard = new ChessBoard();
+    }
+}
