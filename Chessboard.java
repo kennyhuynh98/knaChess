@@ -8,6 +8,10 @@ class ChessBoard() {
     private String colourPreset[] = ["b" , "w"];
     private final static int BOARD_MAX = 8;
 
+    public ChessBoard() {
+        initializeBoard;
+    }
+    
     // Set 8 by 8 chess board. 
     private static void initializeBoard() {
         String boardTileColour;
