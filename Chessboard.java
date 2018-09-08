@@ -25,8 +25,15 @@ public class ChessBoard {
                 }
                 BoardTile newBoardTile = new BoardTile(newCoordinate, boardTileColour);
                 chessBoard.add(newBoardTile);
-                System.out.println("Tile(" + i + "," + j + ") colour:" + chessBoard.get(chessBoard.size() - 1).getColour());
             }
         }
     }
+
+    public void printOutput() {
+        for (BoardTile currentTile : chessBoard) {
+            System.out.println("Tile(" + currentTile.getCoordinates().getXCoord() + "," + currentTile.getCoordinates().getYCoord()
+             + ") colour:" + currentTile.getColour());
+        }
+    }
 }
+
