@@ -12,10 +12,14 @@ public class ChessBoard {
     
     // Set 8 by 8 chess board.
     private static void initializeBoard() {
+
+        Coordinate newCoordinate;
         String boardTileColour;
+        BoardTile newBoardTile;
+
         for (int i = 0; i < BOARD_MAX; i++) {
             for (int j = 0; j < BOARD_MAX; j++) {
-                Coordinate newCoordinate = new Coordinate(i, j);
+                newCoordinate = new Coordinate(i, j);
                 boardTileColour = colourPreset[j % 2];
                 if ((i % 2 == 1) && (j % 2 == 1)) {
                     boardTileColour = colourPreset[0];
@@ -23,16 +27,29 @@ public class ChessBoard {
                 else if ((i % 2 == 1) && (j % 2 == 0)) {
                     boardTileColour = colourPreset[1];
                 }
-                BoardTile newBoardTile = new BoardTile(newCoordinate, boardTileColour);
+                newBoardTile = new BoardTile(newCoordinate, boardTileColour, null);
                 chessBoard.add(newBoardTile);
             }
         }
+        setPieces();
+
+    }
+    public static void setPieces() {
+        chessBoard.forEach((BoardTile)->System.out.println("Tile(" + BoardTile.getCoordinates().getXCoord() + "," + 
+        BoardTile.getCoordinates().getYCoord() + ")"));
+    }
+
+    public static bool checkLimits(Coordinate coordinateToCheck) {
+        if (coordinateToCheck.getXCoord() >= BOARD_MAX || coordinateToCheck.getYCoord() >= BOARD_MAX) {
+            return false;
+        }
+        return true;
     }
 
     public void printOutput() {
         for (BoardTile currentTile : chessBoard) {
             System.out.println("Tile(" + currentTile.getCoordinates().getXCoord() + "," + currentTile.getCoordinates().getYCoord()
-             + ") colour:" + currentTile.getColour());
+             + ") colour: " + currentTile.getColour() + " Tile piece: " + currentTile.piece);
         }
     }
 }

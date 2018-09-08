@@ -8,3 +8,7 @@ To-do:
 - Game win conditions
 
 -Each tile needs to have a PIECE reference?
+
+9/09/18
+- Create a Direction class? 
+-> Would do N/S/E/W/NE...SW etc based on where the tile can move.
