@@ -2,12 +2,12 @@ public class BoardTile {
 
     private Coordinate coordinates;
     private String colour;
-    public Piece piece;
+    private Piece piece;
 
     public BoardTile(Coordinate coordinates, String colour, Piece currentPiece) {
         setCoordinates(coordinates);
         setColour(colour);
-        this.piece = currentPiece;
+        setPiece(currentPiece);
     }
 
     public void setCoordinates(Coordinate coordinatesToSet) {
@@ -26,5 +26,14 @@ public class BoardTile {
     public String getColour() {
         String tempColour = this.colour;
         return tempColour;
+    }
+
+    public void setPiece(Piece pieceToSet) {
+        this.piece = pieceToSet;
+    }
+
+    public Piece getPiece() {
+        Piece tempPiece = this.piece;
+        return tempPiece;
     }
 }
