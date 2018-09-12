@@ -24,7 +24,8 @@ public abstract class Piece {
     }
 
     public String pieceDescription() {
-        String output = this.pieceName + " " + this.getPieceCoordinates() + " Team: " + this.team;
+        String output = this.pieceName + "(" + getPieceCoordinates().getXCoord() + "," + 
+        getPieceCoordinates().getYCoord() + ") " + " Team: " + this.team;
         return output;
     }
 }
